@@ -87,7 +87,7 @@ if __name__ == '__main__':
     block_num_key = 1
     bf = BloomFilter(redis_client, filter_key, bit_key, block_num_key)
     url = "http://www.baidu.com"
-    filter_data = hashlib.md5(url.encode("utf-8")).hexdigest()  # 此处略显多于,参考exists、insert函数内部
+    filter_data = hashlib.md5(url.encode("utf-8")).hexdigest()  # 此处略显多余,参考exists、insert函数内部
     if bf.exists(filter_data):
         print("已存在")
     else:
